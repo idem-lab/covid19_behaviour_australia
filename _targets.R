@@ -62,6 +62,14 @@ list(
     )
   ),
 
+  tar_target(
+    mobility_dates,
+    list(
+      min = min(mobility_data$date),
+      max = max(mobility_data$date)
+    )
+  ),
+
 
 
 
