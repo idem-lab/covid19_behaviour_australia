@@ -79,9 +79,10 @@ list(
     )
   ),
 
-
-
-
+  tar_target(
+    mobility_change_trends,
+    get_mobility_change_trends(mobility_fit_pred)
+  ),
 
   # Questionnaire
 

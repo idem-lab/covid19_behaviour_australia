@@ -51,6 +51,6 @@ generate_mobility_plots <- function (
       ticks_and_labels
     )
 
-
+  TRUE
 
 }

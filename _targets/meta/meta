@@ -12,7 +12,9 @@ mobility_ticks_labels|stem|e34235d32635ddba|4a0e567147e963bb|2c530c1562a7fbd1|39
 plot_mobility_single|function|a6a218e7891ddc78
 plot_mobility_state|function|e6a73e1ef7fc3be9
 process_mobility_data|function|6f11e0ec538932ea
+get_mobility_change_trends|function|770267c37ded6fe3
 predict_mobility_trend|function|03ff7aa48c69a40b
-generate_mobility_plots|function|403c8ecc70935ac5
+generate_mobility_plots|function|146e5b4b7bf6824a
 fit_predict_mobility|function|f0de3f4ac235b4de
-mobility_plots|stem|ec5420d62c1d8b55|ec6175c0f80e1654|1fffbd144df54327|-1026182003||t20166.211762312s|s1632127b|1632127|rds|local|vector|||7.494||
+mobility_plots|stem|445854964aee0763|ec6175c0f80e1654|b253e1213f4df76b|-1026182003||t20166.2386382805s|s48b|48|rds|local|vector|||7.475||
+mobility_change_trends|stem|65b71e76e7513af7|0b2172648874c89d|dbd298fe15f6ed11|-1374600119||t20166.2386389951s|s417627b|417627|rds|local|vector|||0.008||
