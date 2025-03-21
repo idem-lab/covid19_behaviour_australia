@@ -9,12 +9,15 @@ mobility_data|stem|81abebe7df1d29c2|8cf0a22fab87842f|8d30a8e5af13cac0|-32950945|
 project_dates|stem|f5c418916f06dc21|6d06f481af698ab5|2c530c1562a7fbd1|-1206935263||t20164.1807869884s|s2988b|2988|rds|local|vector|||0.127||
 mobility_fit_pred|stem|956cf9cf2184c76a|61705aaef257c25d|21d2aae1248161d1|-994550131||t20164.2151944402s|s1594346b|1594346|rds|local|vector|||41.837||
 mobility_ticks_labels|stem|e34235d32635ddba|4a0e567147e963bb|2c530c1562a7fbd1|394160854||t20165.9996185158s|s223b|223|rds|local|vector|||0.145||
+mobility_plots|stem|445854964aee0763|ec6175c0f80e1654|b253e1213f4df76b|-1026182003||t20166.2386382805s|s48b|48|rds|local|vector|||7.475||
+mobility_change_trends|stem|65b71e76e7513af7|0b2172648874c89d|dbd298fe15f6ed11|-1374600119||t20166.2386389951s|s417627b|417627|rds|local|vector|||0.008||
 plot_mobility_single|function|a6a218e7891ddc78
 plot_mobility_state|function|e6a73e1ef7fc3be9
 process_mobility_data|function|6f11e0ec538932ea
+get_microdistancing_data|function|8ff9c4d0621074ec
 get_mobility_change_trends|function|770267c37ded6fe3
+plot_mobility_missing|function|0be33a4719274e56
 predict_mobility_trend|function|03ff7aa48c69a40b
 generate_mobility_plots|function|146e5b4b7bf6824a
 fit_predict_mobility|function|f0de3f4ac235b4de
-mobility_plots|stem|445854964aee0763|ec6175c0f80e1654|b253e1213f4df76b|-1026182003||t20166.2386382805s|s48b|48|rds|local|vector|||7.475||
-mobility_change_trends|stem|65b71e76e7513af7|0b2172648874c89d|dbd298fe15f6ed11|-1374600119||t20166.2386389951s|s417627b|417627|rds|local|vector|||0.008||
+mobility_missing_plot|stem|445854964aee0763|823a49e0b1018fc0|f5f79dd803d7b38e|-1486949090||t20168.1292455201s|s48b|48|rds|local|vector|||0.588||

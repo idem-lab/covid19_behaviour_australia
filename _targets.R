@@ -13,7 +13,8 @@ tar_option_set(
     "behaviour.change.analysis",
     "purrr",
     "stringr",
-    "magrittr"
+    "magrittr",
+    "lubridate"
   )
 )
 
@@ -40,6 +41,11 @@ list(
   tar_target(
     mobility_data,
     process_mobility_data(raw_mobility_data)
+  ),
+
+  tar_target(
+    mobility_missing_plot,
+    plot_mobility_missing(mobility_data)
   ),
 
   tar_target(
@@ -101,13 +107,13 @@ list(
     )
   ),
 
-  tar_target(
-    microdistancing_data,
-    get_microdistancing_data(
-      hygiene_data,
-      project_dates
-    )
-  ),
+  # tar_target(
+  #   microdistancing_data,
+  #   get_microdistancing_data(
+  #     hygiene_data,
+  #     project_dates
+  #   )
+  # ),
 
 
   ## Contacts / macro-distancing
