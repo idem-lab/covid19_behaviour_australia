@@ -14,7 +14,8 @@ tar_option_set(
     "purrr",
     "stringr",
     "magrittr",
-    "lubridate"
+    "lubridate",
+    "MuMIn"
   )
 )
 
@@ -22,16 +23,16 @@ tar_source()
 
 list(
 
+
+  # Mobility
   tar_target(
-    project_dates,
+    pred_dates,
     seq.Date(
       from = as.Date("2020-01-01"),
       to = as.Date("2023-12-31"),
       by = "day"
     )
   ),
-
-  # Mobility
 
   tar_target(
     raw_mobility_data,
@@ -82,18 +83,18 @@ list(
   #   )
   # ),
 
-  tar_target(
-    mobility_plots,
-    generate_mobility_plots(
-      mobility_fit_pred,
-      mobility_ticks_labels
-    )
-  ),
-
-  tar_target(
-    mobility_change_trends,
-    get_mobility_change_trends(mobility_fit_pred)
-  ),
+  # tar_target(
+  #   mobility_plots,
+  #   generate_mobility_plots(
+  #     mobility_fit_pred,
+  #     mobility_ticks_labels
+  #   )
+  # ),
+  #
+  # tar_target(
+  #   mobility_change_trends,
+  #   get_mobility_change_trends(mobility_fit_pred)
+  # ),
 
   # Questionnaire
 
