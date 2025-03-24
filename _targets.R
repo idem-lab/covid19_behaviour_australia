@@ -75,26 +75,18 @@ list(
     )
   ),
 
-  # tar_target(
-  #   mobility_dates,
-  #   list(
-  #     min = min(mobility_data$date),
-  #     max = max(mobility_data$date)
-  #   )
-  # ),
+  tar_target(
+    mobility_plots,
+    generate_mobility_plots(
+      mobility_fit_pred,
+      mobility_ticks_labels
+    )
+  ),
 
-  # tar_target(
-  #   mobility_plots,
-  #   generate_mobility_plots(
-  #     mobility_fit_pred,
-  #     mobility_ticks_labels
-  #   )
-  # ),
-  #
-  # tar_target(
-  #   mobility_change_trends,
-  #   get_mobility_change_trends(mobility_fit_pred)
-  # ),
+  tar_target(
+    mobility_change_trends,
+    get_mobility_change_trends(mobility_fit_pred)
+  ),
 
   # Questionnaire
 
