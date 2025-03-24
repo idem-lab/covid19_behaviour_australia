@@ -1,16 +1,16 @@
 predict_mobility_trend <- function(
-    mobility,
-    min_date = min(mobility$date),
-    max_date = max(mobility$date)
+    df,
+    m,
+    state,
+    min_pred_date,
+    max_pred_date,
+    min_data_date,
+    max_data_date
 ) {
 
-  print(mobility$state[[1]])
-  print(mobility$datastream[[1]])
 
-  all_dates <- seq(min_date, max_date, by = 1)
+  all_dates <- seq(min_pred_date, max_pred_date, by = 1)
 
-  min_data_date = min(mobility$date)
-  max_data_date = max(mobility$date)
 
   public_holidays <- holiday_dates() %>%
     mutate(
@@ -50,52 +50,6 @@ predict_mobility_trend <- function(
       intervention_stage = factor(intervention_stage)
     )
 
-  df <- mobility %>%
-    left_join(
-      public_holidays,
-      by = c("state", "date")
-    ) %>%
-    left_join(
-      school_holidays,
-      by = c("state", "date")
-    ) %>%
-    left_join(
-      intervention_steps,
-      by = c("state", "date")
-    ) %>%
-    mutate(
-      holiday = replace_na(holiday, "none"),
-      is_a_holiday = holiday != "none",
-      is_a_school_holiday = !is.na(school_holiday),
-      holiday = factor(holiday),
-      date_num = as.numeric(date - min_date),
-      dow = lubridate::wday(date, label = TRUE),
-      dow = as.character(dow)
-    ) %>%
-    filter(!is.na(trend))
-
-  m <- mgcv::gam(trend ~
-
-             # smooth variations in mobility
-             s(date_num, k = 50) +
-
-             # step changes around intervention impositions
-             intervention_stage +
-
-             # random effect on holidays (different for each holiday, but shrunk
-             # to an average holiday effect which used to predict into future)
-             is_a_holiday +
-             s(holiday, bs = "re") +
-
-             # constant effect for school holidays
-             is_a_school_holiday +
-
-             # day of the week effect
-             dow,
-
-           select = TRUE,
-           gamma = 2,
-           data = df)
 
   # compute mean and standard deviation of Gaussian observation model for fitted data
   fit <- mgcv::predict.gam(m, se.fit = TRUE)
@@ -111,13 +65,10 @@ predict_mobility_trend <- function(
 
   # predict each date, *averaging over the weekday effect for each date*
   pred_df <- expand_grid(
-    state_long = unique(df$state_long),
+    state,
     dow = unique(df$dow),
     date = all_dates,
   ) %>%
-    mutate(
-      state = abbreviate_states(state_long)
-    ) %>%
     left_join(
       public_holidays,
       by = c("state", "date")
@@ -140,19 +91,19 @@ predict_mobility_trend <- function(
       ),
       holiday = factor(holiday),
       is_a_school_holiday = !is.na(school_holiday),
-      date_num = as.numeric(date - min_date),
+      date_num = as.numeric(date - min_pred_date),
       # clamp the smooth part of the prediction at both ends
-      date_num = pmax(date_num, min_data_date - min_date),
-      date_num = pmin(date_num, max_data_date - min_date)
+      date_num = pmax(date_num, min_data_date - min_pred_date),
+      date_num = pmin(date_num, max_data_date - min_pred_date)
     )
 
   # predict trends under these conditions, and average over day of the week
-  pred_df <- pred_df %>%
+  pred_df %>%
     mutate(
       predicted_trend = predict(m, newdata = pred_df)
     ) %>%
     group_by(
-      state_long, state, date
+      state, date
     ) %>%
     summarise(
       predicted_trend = mean(predicted_trend),
@@ -176,15 +127,13 @@ predict_mobility_trend <- function(
     left_join(
       df_fitted %>%
         select(
-          state, state_long, date,
+          state, date,
           trend,
           fitted_trend,
           fitted_trend_lower,
           fitted_trend_upper
         ),
-      by = c("state", "state_long", "date")
+      by = c("state", "date")
     )
-
-  pred_df
 
 }

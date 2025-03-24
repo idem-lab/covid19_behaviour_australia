@@ -13,7 +13,9 @@ tar_option_set(
     "behaviour.change.analysis",
     "purrr",
     "stringr",
-    "magrittr"
+    "magrittr",
+    "lubridate",
+    "MuMIn"
   )
 )
 
@@ -21,16 +23,16 @@ tar_source()
 
 list(
 
+
+  # Mobility
   tar_target(
-    project_dates,
+    pred_dates,
     seq.Date(
       from = as.Date("2020-01-01"),
       to = as.Date("2023-12-31"),
       by = "day"
     )
   ),
-
-  # Mobility
 
   tar_target(
     raw_mobility_data,
@@ -43,11 +45,21 @@ list(
   ),
 
   tar_target(
+    mobility_missing_plot,
+    plot_mobility_missing(mobility_data)
+  ),
+
+  tar_target(
     mobility_fit_pred,
     fit_predict_mobility(
       mobility_data,
-      dates = project_dates
+      pred_dates
     )
+  ),
+
+  tar_target(
+    mobility_intervention_model_comparison,
+    compare_mobility_intervention_models(mobility_fit_pred)
   ),
 
   tar_target(
@@ -62,14 +74,6 @@ list(
       end_date = as.Date("2023-01-01")
     )
   ),
-
-  # tar_target(
-  #   mobility_dates,
-  #   list(
-  #     min = min(mobility_data$date),
-  #     max = max(mobility_data$date)
-  #   )
-  # ),
 
   tar_target(
     mobility_plots,
@@ -101,13 +105,13 @@ list(
     )
   ),
 
-  tar_target(
-    microdistancing_data,
-    get_microdistancing_data(
-      hygiene_data,
-      project_dates
-    )
-  ),
+  # tar_target(
+  #   microdistancing_data,
+  #   get_microdistancing_data(
+  #     hygiene_data,
+  #     project_dates
+  #   )
+  # ),
 
 
   ## Contacts / macro-distancing

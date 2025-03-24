@@ -16,7 +16,12 @@ generate_mobility_plots <- function (
 
 
   mdat <- mobility_fit_pred |>
-    filter(!is.na(fitted_trend))
+    select(datastream, pred_df) |>
+    unnest(pred_df) |>
+    filter(!is.na(fitted_trend)) |>
+    mutate(
+      state_long = unabbreviate_states(state)
+    )
 
   # individual plots for each state and datastream
   mdat |>
@@ -32,7 +37,8 @@ generate_mobility_plots <- function (
           ticks_and_labels = ticks_and_labels
         )
       },
-      ticks_and_labels
+      ticks_and_labels,
+      .progress = "Mobility stream and state plots"
     )
 
   # plots grouped by state
@@ -48,7 +54,8 @@ generate_mobility_plots <- function (
           ticks_and_labels = ticks_and_labels
         )
       },
-      ticks_and_labels
+      ticks_and_labels,
+      .progress = "Mobility state plots"
     )
 
   TRUE
