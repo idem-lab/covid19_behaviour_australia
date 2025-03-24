@@ -9,7 +9,7 @@ get_microdistancing_data <- function(
   latent_distancing_range <- range(latent_distancing$mean[!latent_distancing$mean %in% c(0,  1)])
 
 
-  micro_survey <- hygiene_data |>
+  micro_survey <- hygiene_data
 
 
 
