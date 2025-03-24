@@ -52,8 +52,13 @@ list(
     mobility_fit_pred,
     fit_predict_mobility(
       mobility_data,
-      dates = project_dates
+      pred_dates
     )
+  ),
+
+  tar_target(
+    mobility_intervention_model_comparison,
+    compare_mobility_intervention_models(mobility_fit_pred)
   ),
 
   tar_target(
