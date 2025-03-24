@@ -105,13 +105,13 @@ list(
     )
   ),
 
-  # tar_target(
-  #   microdistancing_data,
-  #   get_microdistancing_data(
-  #     hygiene_data,
-  #     project_dates
-  #   )
-  # ),
+  tar_target(
+    microdistancing_data,
+    get_microdistancing_data(
+      hygiene_data,
+      pred_dates
+    )
+  ),
 
 
   ## Contacts / macro-distancing
