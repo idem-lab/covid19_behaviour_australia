@@ -99,7 +99,6 @@ generate_microdistancing_plots <- function(
 
     coord_cartesian(ylim = c(0, 100)) +
     scale_y_continuous(position = "right") +
-    #scale_x_date(date_breaks = "2 month", date_labels = "%e/%m") +
     scale_x_date(
       breaks = microdistancing_ticks_labels$ticks,
       labels = microdistancing_ticks_labels$labels
@@ -175,7 +174,10 @@ generate_microdistancing_plots <- function(
 
     coord_cartesian(ylim = c(0, 100)) +
     scale_y_continuous(position = "right") +
-    scale_x_date(date_breaks = "2 month", date_labels = "%e/%m") +
+    scale_x_date(
+      breaks = microdistancing_ticks_labels$ticks,
+      labels = microdistancing_ticks_labels$labels
+    ) +
     scale_alpha(range = c(0, 0.5)) +
     scale_fill_manual(values = c("Nowcast" = base_colour)) +
 

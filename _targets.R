@@ -147,6 +147,13 @@ list(
     )
   ),
 
+  ## face coverings
+  face_covering_data,
+  get_question_data(
+    hygiene_data,
+    question = "Face covering"
+  ),
+
   ## Contacts / macro-distancing
 
   tar_target(
