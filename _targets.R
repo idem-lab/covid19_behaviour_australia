@@ -105,6 +105,8 @@ list(
     )
   ),
 
+  ### microdistancing
+
   tar_target(
     microdistancing_data,
     get_microdistancing_data(
@@ -113,6 +115,15 @@ list(
     )
   ),
 
+  tar_target(
+    microdistancing_predictions,
+    fit_predict_microdistancing(microdistancing_data = microdistancing_data)
+  ),
+
+  tar_target(
+    microdistancing_intervention_model_comparison,
+    compare_microdistancing_intervention_models(microdistancing_predictions)
+  ),
 
   ## Contacts / macro-distancing
 

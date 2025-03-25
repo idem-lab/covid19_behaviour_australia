@@ -42,14 +42,14 @@ get_microdistancing_data <- function(
     arrange(state, date)
 
   # subset to 1.5m question and add data for modelling
-  survey_distance <- hygiene_data %>%
-    filter(question == "1.5m compliance") %>%
-    left_join(pred_data)
-
-  result <- list(survey_distance = survey_distance,
-                 prediction_data = pred_data)
-
-  result
+  hygiene_data %>%
+    filter(question == "1.5m compliance") |>
+    mutate(data = TRUE) |>
+    full_join(
+      y = pred_data
+    ) |>
+    mutate(data = ifelse(is.na(data), FALSE, data)) |>
+    arrange(state, date)
 
 }
 
