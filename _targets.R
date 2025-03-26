@@ -161,6 +161,29 @@ list(
     compare_hygiene_intervention_models(hygiene_predictions)
   ),
 
+  tar_target(
+    hygiene_ticks_labels,
+    split_ticks_and_labels(
+      tick_freq = "1 month",
+      label_freq = "6 months",
+      label_format = "%b %y",
+      label_shift = FALSE,
+      start_date = as.Date("2020-01-01"),
+      #end_date = as.Date("2022-12-31")
+      end_date = as.Date("2024-01-01")
+    )
+  ),
+
+  tar_target(
+    hygiene_plots,
+    generate_hygiene_plots(
+      hygiene_data,
+      hygiene_predictions,
+      hygiene_ticks_labels
+    )
+  ),
+
+
   ## Contacts / macro-distancing
 
   tar_target(
