@@ -44,17 +44,15 @@ compare_mobility_intervention_models <- function(mobility_fit_pred) {
 
   # table
 
-  deltas_wide <- deltas |>
+  deltas |>
     pivot_wider(
       names_from = state,
       values_from = delta
-    )
-
-  deltas_wide |>
+    ) |>
     write_csv(
       file = "outputs/tables/mobility_model_comparison.csv"
     )
 
-  deltas_wide
+  deltas
 
 }

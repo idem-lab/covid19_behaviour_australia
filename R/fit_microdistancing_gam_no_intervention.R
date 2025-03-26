@@ -8,7 +8,7 @@ fit_microdistancing_gam_no_intervention <- function(
   date <- fit_dat$date
   date_num <- as.numeric(date - min(date))
 
-  m <- mgcv::gam(
+  mgcv::gam(
     cbind(count, I(respondents - count)) ~ s(date_num),
     select = TRUE,
     family = stats::binomial,

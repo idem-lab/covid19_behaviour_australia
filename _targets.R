@@ -58,7 +58,7 @@ list(
   ),
 
   tar_target(
-    mobility_intervention_model_comparison,
+    mod_comp_mobility,
     compare_mobility_intervention_models(mobility_fit_pred)
   ),
 
@@ -121,7 +121,7 @@ list(
   ),
 
   tar_target(
-    microdistancing_intervention_model_comparison,
+    mod_comp_microdistancing,
     compare_microdistancing_intervention_models(microdistancing_predictions)
   ),
 
@@ -147,11 +147,18 @@ list(
     )
   ),
 
-  ## face coverings
-  face_covering_data,
-  get_question_data(
-    hygiene_data,
-    question = "Face covering"
+  ## other hygiene questions
+
+  tar_target(
+    hygiene_predictions,
+    fit_predict_hygiene(
+      hygiene_data
+    )
+  ),
+
+  tar_target(
+    mod_comp_hygiene,
+    compare_hygiene_intervention_models(hygiene_predictions)
   ),
 
   ## Contacts / macro-distancing
