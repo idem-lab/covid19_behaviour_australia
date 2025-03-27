@@ -21,7 +21,9 @@ mod_comp_hygiene|stem|9964a528514349bf|58a4d64e0bea4fef|916af58ddae4993a|-116393
 mod_comp_mobility|stem|2372045db67eb737|5d9f8438613ea150|d4620a84bc6eb321|-1541208842||t20173.2186041509s|s699b|699|rds|local|vector|||0.008||
 mod_comp_microdistancing|stem|c29dea7b9a3e893e|ea0f9ba2c523ccac|433faaa4f07fac06|-611740965||t20173.2186043616s|s250b|250|rds|local|vector|||0.012||
 hygiene_ticks_labels|stem|9edb319bd6b3276f|ee5df9c395fa7fe6|2c530c1562a7fbd1|1768927823||t20173.2283332631s|s356b|356|rds|local|vector|||0.591||
+hygiene_plots|stem|445854964aee0763|09ad98d63142fdda|7e7dd466faeda2a4|453962363||t20174.9496224794s|s48b|48|rds|local|vector|||5.843||
 predict_microdistancing_gam|function|6827ce50d48090f5
+prepare_macrodistancing_data|function|94cf5bd834df67c0
 fit_microdistancing_gam_intervention|function|37926620ed64f4da
 plot_hygiene_question|function|0cebb6d949edb545
 fit_hygiene_gam_intervention|function|f066a25d4a924404
@@ -41,6 +43,7 @@ process_mobility_data|function|6f11e0ec538932ea
 fit_mobility_with_int|function|8e4a17075b93833c
 predict_mobility_trend|function|004e7e24df9faccc
 compare_hygiene_intervention_models|function|87411c8338f1a0a4
+fit_predict_macrodistancing|function|1142ac340ba5daa4
 compare_mobility_intervention_models|function|12ad0315702f77a9
 plot_mobility_missing|function|0be33a4719274e56
 get_mobility_change_trends|function|207d90ae0db34c73
@@ -50,4 +53,4 @@ generate_mobility_plots|function|0f2a4dbd1efd8fbc
 generate_hygiene_plots|function|2df8273736ef8c6f
 fit_mobility_models|function|5674eba216ef02e3
 fit_predict_mobility|function|8d2bdd66d1cc0fd7
-hygiene_plots|stem|445854964aee0763|09ad98d63142fdda|7e7dd466faeda2a4|453962363||t20174.9496224794s|s48b|48|rds|local|vector|||5.843||
+macrodistancing_data|stem|7496001a234a4c11|5ee2b7a90523b06b|aeffef539eb7e622|-1013037866||t20174.98765768s|s6417493b|6417493|rds|local|vector|||0.09||

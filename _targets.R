@@ -200,6 +200,19 @@ list(
   ),
 
   tar_target(
+    macrodistancing_data,
+    prepare_macrodistancing_data(
+      mobility_change_trends,
+      contact_data
+    )
+  ),
+
+  tar_target(
+    macrodistancing_predictions,
+    fit_predict_macrodistancing(macrodistancing_data = macrodistancing_data)
+  ),
+
+  tar_target(
     name = pointless_end_target,
     command = "So I can put a comma on the end of everything and fuggedabadit"
   )
