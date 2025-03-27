@@ -10,7 +10,7 @@
 #' @author geryan
 #' @export
 generate_hygiene_plots <- function(
-    hygiene_data,
+    #hygiene_data,
     hygiene_predictions,
     hygiene_ticks_labels
 ) {
@@ -34,7 +34,7 @@ generate_hygiene_plots <- function(
   )
 
 
-#### all plots in one by state
+#### questions by each state
 
   p_all <- plot_dat |>
     ggplot(
@@ -52,17 +52,21 @@ generate_hygiene_plots <- function(
     #     col = question
     #   )
     # ) +
-    # facet_wrap(
-    #   ~state,
-    #   ncol = 2
-    # ) +
+    facet_wrap(
+      ~state,
+      ncol = 2
+    ) +
     xlab(element_blank()) +
 
     coord_cartesian(ylim = c(0, 1)) +
     scale_y_continuous(position = "right") +
     scale_x_date(
       breaks = hygiene_ticks_labels$ticks,
-      labels = hygiene_ticks_labels$labels
+      labels = hygiene_ticks_labels$labels,
+      limits = c(
+        min(plot_dat$date),
+        max(plot_dat$date)
+      )
     ) +
     geom_vline(
       aes(xintercept = date),
@@ -107,40 +111,50 @@ generate_hygiene_plots <- function(
       values = hygiene_cols
     )
 
-  save_ggplot(filename = "hygiene_all.png")
+  p_all
 
-  p_all <- plot_dat |>
+  save_ggplot(
+    filename = "hygiene_all_by_state.png",
+    subdir = "figures/hygiene"
+  )
+
+
+  #### all states by question
+
+  state_cols <- c(
+    "darkgray", # ACT
+    "cornflowerblue", # NSW
+    "chocolate1", #NT
+    "violetred4", # QLD
+    "red1", # SA
+    "darkgreen", # TAS
+    "darkblue", # VIC
+    "gold1" # WA
+  )
+
+  p_all_by_q <- plot_dat |>
     ggplot(
       aes(
         x = date,
         y = mean,
-        col = question,
-        fill = question
+        col = state,
+        fill = state
       )
     ) +
-    # geom_line(
-    #   aes(
-    #     x = date,
-    #     y = mean,
-    #     col = question
-    #   )
-    # ) +
-    # facet_wrap(
-    #   ~state,
-    #   ncol = 2
-    # ) +
+    facet_wrap(
+      ~question,
+      ncol = 2
+    ) +
     xlab(element_blank()) +
-
     coord_cartesian(ylim = c(0, 1)) +
     scale_y_continuous(position = "right") +
     scale_x_date(
       breaks = hygiene_ticks_labels$ticks,
-      labels = hygiene_ticks_labels$labels
-    ) +
-    geom_vline(
-      aes(xintercept = date),
-      data = intervention_lines,
-      colour = "grey80"
+      labels = hygiene_ticks_labels$labels,
+      limits = c(
+        min(plot_dat$date),
+        max(plot_dat$date)
+      )
     ) +
     geom_ribbon(
       aes(
@@ -174,13 +188,81 @@ generate_hygiene_plots <- function(
       fill = "Question"
     ) +
     scale_fill_manual(
-      values = hygiene_cols
+      values = state_cols
     ) +
     scale_colour_manual(
-      values = hygiene_cols
+      values = state_cols
     )
 
-  save_ggplot(filename = "hygiene_all.png")
+  p_all_by_q
+
+  save_ggplot(
+    filename = "hygiene_all_by_question.png",
+    subdir = "figures/hygiene"
+  )
+
+  ###
+  # individual plots for each state and datastream
+  plot_dat |>
+    mutate(
+      st = state
+    ) |>
+    group_by(st, question) |>
+    nest() %$%
+    walk2(
+      .x = data,
+      .y = question,
+      .f = function(x, y, hygiene_ticks_labels){
+        plot_hygiene_single(
+          plot_data = x,
+          question = y,
+          ticks_and_labels = hygiene_ticks_labels
+        )
+      },
+      hygiene_ticks_labels,
+      .progress = "Hygiene individual plots"
+    )
+
+  # plots grouped by state
+  plot_dat |>
+    mutate(
+      st = state
+    ) |>
+    group_by(st) |>
+    nest() %$%
+    walk(
+      .x = data,
+      .f = function(x, hygiene_ticks_labels){
+        plot_hygiene_state(
+          plot_data = x,
+          ticks_and_labels = hygiene_ticks_labels
+        )
+      },
+      hygiene_ticks_labels,
+      .progress = "Hygiene state plots"
+    )
+
+  # plots grouped by question
+  plot_dat |>
+    mutate(
+      q = question
+    ) |>
+    group_by(q) |>
+    nest() %$%
+    walk(
+      .x = data,
+      .f = function(x, hygiene_ticks_labels){
+        plot_hygiene_question(
+          plot_data = x,
+          ticks_and_labels = hygiene_ticks_labels
+        )
+      },
+      hygiene_ticks_labels,
+      .progress = "Hygiene question plots"
+    )
+
+  TRUE
+
 
 
 }

@@ -177,7 +177,7 @@ list(
   tar_target(
     hygiene_plots,
     generate_hygiene_plots(
-      hygiene_data,
+      #hygiene_data,
       hygiene_predictions,
       hygiene_ticks_labels
     )
