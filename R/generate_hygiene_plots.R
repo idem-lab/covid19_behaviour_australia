@@ -216,7 +216,7 @@ generate_hygiene_plots <- function(
         plot_hygiene_single(
           plot_data = x,
           question = y,
-          ticks_and_labels = hygiene_ticks_labels
+          hygiene_ticks_labels = hygiene_ticks_labels
         )
       },
       hygiene_ticks_labels,
@@ -235,7 +235,7 @@ generate_hygiene_plots <- function(
       .f = function(x, hygiene_ticks_labels){
         plot_hygiene_state(
           plot_data = x,
-          ticks_and_labels = hygiene_ticks_labels
+          hygiene_ticks_labels = hygiene_ticks_labels
         )
       },
       hygiene_ticks_labels,
@@ -254,7 +254,7 @@ generate_hygiene_plots <- function(
       .f = function(x, hygiene_ticks_labels){
         plot_hygiene_question(
           plot_data = x,
-          ticks_and_labels = hygiene_ticks_labels
+          hygiene_ticks_labels = hygiene_ticks_labels
         )
       },
       hygiene_ticks_labels,

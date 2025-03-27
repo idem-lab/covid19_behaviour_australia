@@ -4,13 +4,13 @@
 #'
 #' @title
 #' @param plot_data
-#' @param ticks_and_labels
+#' @param hygiene_ticks_labels
 #' @return
 #' @author geryan
 #' @export
 plot_hygiene_state <- function(
     plot_data,
-    ticks_and_labels
+    hygiene_ticks_labels
   ) {
 
   hygiene_cols <- c(
@@ -49,8 +49,8 @@ plot_hygiene_state <- function(
       breaks = hygiene_ticks_labels$ticks,
       labels = hygiene_ticks_labels$labels,
       limits = c(
-        min(plot_dat$date),
-        max(plot_dat$date)
+        min(plot_data$date),
+        max(plot_data$date)
       )
     ) +
     geom_vline(

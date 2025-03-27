@@ -5,14 +5,14 @@
 #' @title
 #' @param plot_data
 #' @param question
-#' @param ticks_and_labels
+#' @param hygiene_ticks_labels
 #' @return
 #' @author geryan
 #' @export
 plot_hygiene_single <- function(
     plot_data,
     question,
-    ticks_and_labels
+    hygiene_ticks_labels
   ) {
 
   intervention_lines <- inner_join(
