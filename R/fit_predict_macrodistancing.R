@@ -42,6 +42,8 @@ fit_predict_macrodistancing <- function(
     # no survey data from during the TAS lockdown in these dates so not possible
     # to fit effect of this lockdown, and therefore excluding this intervention
     filter(!(state == "TAS" & date >= "2021-10-16" & date <= "2021-10-19")) %>%
+    # no contact data for VIC in this period
+    filter(!(state == "VIC" & date >= "2020-06-30" & date <= "2020-07-07")) |>
     mutate(
       intervention_id = paste0(
         "intervention_",
@@ -176,13 +178,11 @@ fit_predict_macrodistancing <- function(
     rowwise() |>
     mutate(
       model_with_int = fit_macrodistancing_gam_intervention(
-        fit_dat,
-        pred_dat
+        fit_dat
       ) |>
         list(),
       model_no_int = fit_macrodistancing_gam_no_intervention(
-        fit_dat,
-        pred_dat
+        fit_dat
       ) |>
         list()
     ) |>
@@ -207,7 +207,7 @@ fit_predict_macrodistancing <- function(
     ) |>
     rowwise() |>
     mutate(
-      predictions = predict_hygiene_gam(
+      predictions = predict_macrodistancing_gam(
         pred_dat = pred_dat,
         m1 = model_with_int,
         m2 = model_no_int
@@ -230,3 +230,5 @@ fit_predict_macrodistancing <- function(
 
 
 }
+
+

@@ -1,6 +1,5 @@
 fit_macrodistancing_gam_intervention <- function(
-    fit_dat,
-    pred_dat
+    fit_dat
 ){
 
   intervention_stage <- fit_dat$intervention_stage

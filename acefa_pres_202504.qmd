@@ -6,8 +6,12 @@ author:
   - Nick Golding
   - August Hao
   - Katharine Senior
+  - David Price
+  - Oliver Eales
+  - Mingmei Teo
   - James McCaw
   - Freya Shearer
+  - AUTHORS FROM TEST SEEKING BEHAVIOURS PAPER
 format:
   beamer:
     colortheme: seagull
