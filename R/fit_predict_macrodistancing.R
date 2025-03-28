@@ -172,4 +172,61 @@ fit_predict_macrodistancing <- function(
     by = "state"
   )
 
+  df_macro |>
+    rowwise() |>
+    mutate(
+      model_with_int = fit_macrodistancing_gam_intervention(
+        fit_dat,
+        pred_dat
+      ) |>
+        list(),
+      model_no_int = fit_macrodistancing_gam_no_intervention(
+        fit_dat,
+        pred_dat
+      ) |>
+        list()
+    ) |>
+    ungroup() |>
+    mutate(
+      aicc_int = map(
+        .x = model_with_int,
+        .f = function(x){
+          if(is.logical(x)){
+            NA
+          } else {
+            AICc(x)
+          }
+        }
+      ) |>
+        unlist(),
+      aicc_no_int = map(
+        .x = model_no_int,
+        .f = AICc
+      ) |>
+        unlist()
+    ) |>
+    rowwise() |>
+    mutate(
+      predictions = predict_hygiene_gam(
+        pred_dat = pred_dat,
+        m1 = model_with_int,
+        m2 = model_no_int
+      ) |>
+        list()
+    ) |>
+    ungroup() |>
+    mutate(
+      delta = aicc_no_int - aicc_int
+    ) |>
+    select(
+      -fit_dat,
+      -pred_dat,
+      - model_with_int,
+      - model_no_int,
+      - aicc_int,
+      - aicc_no_int
+    )
+
+
+
 }
