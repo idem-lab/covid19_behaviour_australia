@@ -213,6 +213,23 @@ list(
   ),
 
   tar_target(
+    mod_comp_macrodistancing,
+    compare_macrodistancing_intervention_models(macrodistancing_predictions)
+  ),
+
+  # intervention models comparison
+
+  tar_target(
+    intervention_comparisons,
+    compare_interventions(
+      mod_comp_mobility,
+      mod_comp_microdistancing,
+      mod_comp_hygiene,
+      mod_comp_macrodistancing
+    )
+  ),
+
+  tar_target(
     name = pointless_end_target,
     command = "So I can put a comma on the end of everything and fuggedabadit"
   )

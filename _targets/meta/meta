@@ -23,6 +23,7 @@ hygiene_ticks_labels|stem|9edb319bd6b3276f|ee5df9c395fa7fe6|2c530c1562a7fbd1|176
 hygiene_plots|stem|445854964aee0763|09ad98d63142fdda|7e7dd466faeda2a4|453962363||t20174.9496224794s|s48b|48|rds|local|vector|||5.843||
 macrodistancing_data|stem|7496001a234a4c11|5ee2b7a90523b06b|aeffef539eb7e622|-1013037866||t20174.98765768s|s6417493b|6417493|rds|local|vector|||0.09||
 hygiene_predictions|stem|19f725165e7c51ed|7f9216207b41ae3f|08f50214dbb10a46|-879091495||t20175.1424388161s|s1522960b|1522960|rds|local|vector|||10.162||
+macrodistancing_predictions|stem|7578ce85b550c2d8|e3bb289fcd28fbf1|b4dcdd2c59ff7287|-920581633||t20175.2010498564s|s430646b|430646|rds|local|vector|||89.38||
 predict_microdistancing_gam|function|6827ce50d48090f5
 prepare_macrodistancing_data|function|94cf5bd834df67c0
 fit_microdistancing_gam_intervention|function|37926620ed64f4da
@@ -31,6 +32,7 @@ fit_hygiene_gam_intervention|function|f066a25d4a924404
 fit_hygiene_gam_no_intervention|function|01bbc145b89fc73b
 predict_hygiene_gam|function|1132573cad0efeb3
 fit_microdistancing_gam_no_intervention|function|01bbc145b89fc73b
+compare_macrodistancing_intervention_models|function|19190960ed83902a
 plot_mobility_single|function|a6a218e7891ddc78
 plot_mobility_state|function|e6a73e1ef7fc3be9
 generate_microdistancing_plots|function|bc83cc034e37063d
@@ -48,8 +50,8 @@ predict_mobility_trend|function|004e7e24df9faccc
 compare_hygiene_intervention_models|function|87411c8338f1a0a4
 fit_macrodistancing_gam_intervention|function|de6074002e893f32
 compare_mobility_intervention_models|function|12ad0315702f77a9
-plot_mobility_missing|function|0be33a4719274e56
 get_mobility_change_trends|function|207d90ae0db34c73
+plot_mobility_missing|function|0be33a4719274e56
 fit_predict_hygiene|function|e718d362b6d3fb9f
 fit_predict_microdistancing|function|6279f78fb12b850d
 generate_mobility_plots|function|0f2a4dbd1efd8fbc
@@ -57,4 +59,4 @@ generate_hygiene_plots|function|2df8273736ef8c6f
 fit_mobility_models|function|5674eba216ef02e3
 fit_predict_mobility|function|8d2bdd66d1cc0fd7
 fit_predict_macrodistancing|function|c1187c773cc64e22
-macrodistancing_predictions|stem|7578ce85b550c2d8|e3bb289fcd28fbf1|b4dcdd2c59ff7287|-920581633||t20175.2010498564s|s430646b|430646|rds|local|vector|||89.38||
+mod_comp_macrodistancing|stem|b92c977fb1726cd1|cd54e2d72c16e04e|492266804838d165|1067729680||t20175.2049618355s|s247b|247|rds|local|vector|||0.057||
