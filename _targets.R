@@ -213,6 +213,28 @@ list(
   ),
 
   tar_target(
+    macrodistancing_ticks_labels,
+    split_ticks_and_labels(
+      tick_freq = "1 month",
+      label_freq = "6 months",
+      label_format = "%b %y",
+      label_shift = FALSE,
+      start_date = as.Date("2020-01-01"),
+      #end_date = as.Date("2022-12-31")
+      end_date = as.Date("2024-01-01")
+    )
+  ),
+
+  tar_target(
+    macrodistancing_plots,
+    generate_macrodistancing_plots(
+      #macrodistancing_data,
+      macrodistancing_predictions,
+      macrodistancing_ticks_labels
+    )
+  ),
+
+  tar_target(
     mod_comp_macrodistancing,
     compare_macrodistancing_intervention_models(macrodistancing_predictions)
   ),

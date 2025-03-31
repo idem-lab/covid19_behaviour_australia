@@ -62,7 +62,7 @@ compare_interventions <- function(
     ) |>
     write_csv(file = "outputs/tables/intervention_model_comparison_deltas.csv")
 
-  all_deltas |>
+  delta_plot <- all_deltas |>
     ggplot() +
     geom_tile(
       aes(
@@ -74,7 +74,19 @@ compare_interventions <- function(
     scale_fill_gradient2() +
     labs(
       x = "",
-      y = ""
+      y = "",
+      title = expression(
+        Delta~
+          AICc~
+          between~
+          behaviour~
+          models~
+          with~
+          and~
+          without~
+          intervention~
+          effects
+      )
     ) +
     cowplot::theme_cowplot() +
     cowplot::panel_border(remove = TRUE) +
@@ -93,8 +105,22 @@ compare_interventions <- function(
       panel.spacing = unit(
         1.2,
         "lines"
-      )
+      ),
+      axis.line = element_blank()
     )
+
+  delta_plot
+
+  dpi <- 200
+  ggsave(
+    filename = "outputs/figures/intervention_model_comparison.png",
+    plot = delta_plot,
+    width = 1600 / dpi,
+    height = 1000 / dpi,
+    dpi = dpi,
+    scale = 1.2,
+    bg = "white"
+  )
 
 
 }
