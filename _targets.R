@@ -228,7 +228,6 @@ list(
   tar_target(
     macrodistancing_plots,
     generate_macrodistancing_plots(
-      #macrodistancing_data,
       macrodistancing_predictions,
       macrodistancing_ticks_labels
     )

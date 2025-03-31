@@ -25,6 +25,7 @@ macrodistancing_data|stem|7496001a234a4c11|5ee2b7a90523b06b|aeffef539eb7e622|-10
 hygiene_predictions|stem|19f725165e7c51ed|7f9216207b41ae3f|08f50214dbb10a46|-879091495||t20175.1424388161s|s1522960b|1522960|rds|local|vector|||10.162||
 macrodistancing_predictions|stem|7578ce85b550c2d8|e3bb289fcd28fbf1|b4dcdd2c59ff7287|-920581633||t20175.2010498564s|s430646b|430646|rds|local|vector|||89.38||
 mod_comp_macrodistancing|stem|b92c977fb1726cd1|cd54e2d72c16e04e|492266804838d165|1067729680||t20175.2049618355s|s247b|247|rds|local|vector|||0.057||
+macrodistancing_ticks_labels|stem|9edb319bd6b3276f|ee5df9c395fa7fe6|2c530c1562a7fbd1|272790853||t20178.0081483677s|s356b|356|rds|local|vector|||0.617||
 predict_microdistancing_gam|function|6827ce50d48090f5
 prepare_macrodistancing_data|function|94cf5bd834df67c0
 fit_microdistancing_gam_intervention|function|37926620ed64f4da
@@ -51,6 +52,7 @@ fit_mobility_with_int|function|8e4a17075b93833c
 predict_mobility_trend|function|004e7e24df9faccc
 compare_hygiene_intervention_models|function|87411c8338f1a0a4
 fit_macrodistancing_gam_intervention|function|de6074002e893f32
+generate_macrodistancing_plots|function|aa2e30b5fa0eeb73
 compare_mobility_intervention_models|function|12ad0315702f77a9
 get_mobility_change_trends|function|207d90ae0db34c73
 plot_mobility_missing|function|0be33a4719274e56
@@ -61,4 +63,4 @@ generate_hygiene_plots|function|2df8273736ef8c6f
 fit_mobility_models|function|5674eba216ef02e3
 fit_predict_mobility|function|8d2bdd66d1cc0fd7
 fit_predict_macrodistancing|function|c1187c773cc64e22
-macrodistancing_ticks_labels|stem|9edb319bd6b3276f|ee5df9c395fa7fe6|2c530c1562a7fbd1|272790853||t20178.0081483677s|s356b|356|rds|local|vector|||0.617||
+intervention_comparisons|stem|739c2138ebf37ec0|f40754906647c224|747a8e6d04ec2ce7|-298237833||t20178.04050917s|s102b|102|rds|local|vector|||0.201||

@@ -1,0 +1,185 @@
+---
+title: "How did Australians behave during the COVID-19 pandemic?"
+subtitle: "A look into mobility and systematic questionnaire data from 2020-2023"
+author:
+  - Gerry Ryan
+  - Nick Golding
+  - August Hao
+  - Katharine Senior
+  - David Price
+  - Oliver Eales
+  - Mingmei Teo
+  - James McCaw
+  - Freya Shearer
+  - AUTHORS FROM TEST SEEKING BEHAVIOURS PAPER
+format:
+  beamer:
+    colortheme: seagull
+    #theme: acefa-iddu
+    # colortheme: beamercolorthemeacefa-iddu
+    # innertheme: beamerinnerthemeacefa-iddu
+    # outertheme: beamerouterthemeacefa-iddu
+    keep-tex: true
+    number-sections: false
+editor: source
+---
+
+## Remember a time
+::::: {.columns}
+
+
+::: {.column width="30%"}
+![](images/lax_78089_elife-78089-fig2-v2.tif.jpg)
+:::
+
+::: {.column width="30%"}
+![](images/lax_78089_elife-78089-fig3-v2.tif.jpg)
+
+:::
+
+
+::: {.column width="30%"}
+
+- Staying safe \pause
+- Weekly Situational Assessment reports \pause
+- Transmission potential \pause
+- Dan Murphy's opening hours
+
+:::
+
+:::::
+Golding et al. 2023. eLife
+
+## Naturally you recall that
+:::: {.columns}
+
+::: {.column width="40%"}
+- Transmission potential makes boring times of low or no transmission more fun
+:::
+
+::: {.column width="70%"}
+![](images/tp_model_schema.jpg)
+Golding et al. 2023. eLife
+
+:::
+
+::::
+
+## Naturally you recall that
+:::: {.columns}
+
+::: {.column width="40%"}
+- Transmission potential makes boring times of low or no transmission more fun
+- TP is informed by behavioural data
+:::
+
+::: {.column width="70%"}
+![](images/tp_model_schema.jpg)
+Golding et al. 2023. eLife
+
+:::
+
+::::
+
+## Naturally you recall that
+:::: {.columns}
+
+::: {.column width="40%"}
+* Transmission potential makes boring times of low or no transmission more fun
+* TP is informed by behavioural data
+  + mobility data
+  + questionnaire data
+:::
+
+::: {.column width="70%"}
+![](images/tp_model_schema.jpg)
+Golding et al. 2023. eLife
+
+:::
+
+::::
+
+# Mobility
+
+## We're all in it together
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Remember all the great data that Big Tech let us have?
+
+
+- FaceBook!
+- CityMapper!
+- Apple!
+- Google!
+:::
+
+::: {.column width="60%"}
+![](images/tech_knobs.jpeg)
+
+:::
+
+::::
+
+## We're all in it together
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Remember all the great data that Big Tech let us have?
+
+
+- ~~FaceBook!~~ RIP May 2020 ⚰️ 
+- CityMapper!
+- Apple!
+- Google!
+:::
+
+::: {.column width="60%"}
+![](images/tech_knobs.jpeg)
+
+:::
+
+::::
+
+## We're all in it together
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Remember all the great data that Big Tech let us have?
+
+
+- ~~FaceBook!~~ RIP May 2020 ⚰️ 
+- ~~CityMapper!~~ RIP August 2021 ⚰️ 
+- ~~Apple!~~ RIP August 2021 2020 ⚰️ 
+- Google!
+:::
+
+::: {.column width="60%"}
+![](images/tech_knobs.jpeg)
+
+:::
+
+::::
+
+
+## two col template
+
+:::: {.columns}
+
+::: {.column}
+- text
+- more
+:::
+
+::: {.column}
+![](images/tp_model_schema.jpg)
+:::
+
+::::
+
+
+
+
