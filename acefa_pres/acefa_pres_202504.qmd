@@ -105,7 +105,7 @@ Golding et al. 2023. eLife
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 Remember all the great data that Big Tech let us have?
 
 
@@ -115,7 +115,7 @@ Remember all the great data that Big Tech let us have?
 - Google!
 :::
 
-::: {.column width="60%"}
+::: {.column width="40%"}
 ![](images/tech_knobs.jpeg)
 
 :::
@@ -126,17 +126,17 @@ Remember all the great data that Big Tech let us have?
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 Remember all the great data that Big Tech let us have?
 
 
-- ~~FaceBook!~~ RIP May 2020 ⚰️ 
+- ~~FaceBook!~~ RIP May 2020 
 - CityMapper!
 - Apple!
 - Google!
 :::
 
-::: {.column width="60%"}
+::: {.column width="40%"}
 ![](images/tech_knobs.jpeg)
 
 :::
@@ -147,18 +147,94 @@ Remember all the great data that Big Tech let us have?
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 Remember all the great data that Big Tech let us have?
 
 
-- ~~FaceBook!~~ RIP May 2020 ⚰️ 
-- ~~CityMapper!~~ RIP August 2021 ⚰️ 
-- ~~Apple!~~ RIP August 2021 2020 ⚰️ 
+- ~~FaceBook!~~ RIP May 2020
+- ~~CityMapper!~~ RIP August 2021
+- ~~Apple!~~ RIP August 2021 
 - Google!
 :::
 
-::: {.column width="60%"}
+::: {.column width="40%"}
 ![](images/tech_knobs.jpeg)
+
+:::
+
+::::
+
+
+## We're all in it together
+
+:::: {.columns}
+
+::: {.column width="60%"}
+Remember all the great data that Big Tech let us have?
+
+
+- ~~FaceBook!~~ RIP May 2020
+- ~~CityMapper!~~ RIP August 2021
+- ~~Apple!~~ RIP August 2021
+- ~~Google!~~ RIP October 2022
+:::
+
+::: {.column width="40%"}
+![](images/tech_knobs.jpeg)
+
+:::
+
+::::
+
+## Don't be evil
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+Google mobility data from 2020-2022 --- still archived online!\newline
+
+Relative change from baseline on time spent in a variety of settings:\newline
+
+- retail and recreation
+- grocery and pharmacy
+- parks
+- transit stations
+- workplaces
+- residential
+
+:::
+
+::: {.column width="40%"}
+![](images/google.jpg)
+
+:::
+
+::::
+
+## Don't be evil
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+Google mobility data from 2020-2022 --- still archived online!\newline
+
+Relative change from baseline on time spent in a variety of settings:\newline
+
+- retail and recreation
+- grocery and pharmacy
+- parks
+- transit stations
+- workplaces
+- residential\newline
+
+Fed into macrodistancing and microdistancing measures 2020-2023
+
+:::
+
+::: {.column width="40%"}
+![](images/lax_78089_elife-78089-fig3-v2.tif.jpg)
 
 :::
 
