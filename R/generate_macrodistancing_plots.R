@@ -28,7 +28,7 @@ generate_macrodistancing_plots <- function(
   holiday_lines <- holiday_dates() |>
     mutate(state = abbreviate_states(state)) |>
     filter(
-      date
+      date >= min(plot_dat)
     )
 
   ## all macrodistancing
@@ -72,14 +72,17 @@ generate_macrodistancing_plots <- function(
         ymax = ci_90_hi
       ),
       alpha = 0.3,
-      colour = purple()
+      colour = purple(),
+      fill = purple()
     ) +
     geom_ribbon(
       aes(
         ymin = ci_50_lo,
         ymax = ci_50_hi
       ),
-      alpha = 0.6
+      alpha = 0.6,
+      colour = purple(),
+      fill = purple()
     ) +
     cowplot::theme_cowplot() +
     cowplot::panel_border(remove = TRUE) +
@@ -95,6 +98,19 @@ generate_macrodistancing_plots <- function(
     labs(
       title = "Macrodistancing trends",
       y = "Number of contacts"
+    ) +
+    geom_rug(
+      aes(date),
+      data = holiday_lines,
+      col = "green",
+      size = 1,
+      length = unit(0.05, "npc"),
+      sides = "b",
+      inherit.aes = FALSE
+    )  +
+    theme(
+      axis.text.x = element_text(size = 8),
+      axis.ticks.x = element_line(colour = macro_ticks_labels$tick.cols)
     )
 
   p_all
