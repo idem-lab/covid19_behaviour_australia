@@ -4,6 +4,7 @@
 %
 \documentclass[
   ignorenonframetext,
+  aspectratio=149,
 ]{beamer}
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
@@ -169,7 +170,7 @@
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={How did Australians behave during the COVID-19 pandemic?},
-  pdfauthor={Gerry Ryan; Nick Golding; August Hao; Katharine Senior; David Price; Oliver Eales; Mingmei Teo; James McCaw; Freya Shearer; AUTHORS FROM TEST SEEKING BEHAVIOURS PAPER},
+  pdfauthor={Gerry Ryan; Nick Golding; August Hao; Katharine Senior; Oliver Eales; Mingmei Teo; David Price; James McCaw; Freya Shearer},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
@@ -178,9 +179,8 @@
 \subtitle{A look into mobility and systematic questionnaire data from
 2020-2023}
 \author{Gerry Ryan \and Nick Golding \and August Hao \and Katharine
-Senior \and David Price \and Oliver Eales \and Mingmei Teo \and James
-McCaw \and Freya Shearer \and AUTHORS FROM TEST SEEKING BEHAVIOURS
-PAPER}
+Senior \and Oliver Eales \and Mingmei Teo \and David Price \and James
+McCaw \and Freya Shearer}
 \date{}
 
 \begin{document}
@@ -202,13 +202,13 @@ PAPER}
 \begin{itemize}
 \tightlist
 \item
-  Staying safe \pause
-\item
-  Weekly Situational Assessment reports \pause
-\item
-  Transmission potential \pause
+  Staying safe
 \item
   Dan Murphy's opening hours
+\item
+  Weekly Situational Assessment reports
+\item
+  Transmission potential
 \end{itemize}
 \end{column}
 \end{columns}
@@ -223,8 +223,18 @@ Golding et al.~2023. eLife
 \begin{itemize}
 \tightlist
 \item
-  Transmission potential makes boring times of low or no transmission
-  more fun
+  Transmission potential is a \st{fun} useful metric for \st{boring}
+  periods of low or no transmission
+\item
+  TP is informed by behavioural data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    mobility data
+  \item
+    questionnaire data
+  \end{itemize}
 \end{itemize}
 \end{column}
 
@@ -241,28 +251,8 @@ Golding et al.~2023. eLife
 \begin{itemize}
 \tightlist
 \item
-  Transmission potential makes boring times of low or no transmission
-  more fun
-\item
-  TP is informed by behavioural data
-\end{itemize}
-\end{column}
-
-\begin{column}{0.7\textwidth}
-\includegraphics{images/tp_model_schema.jpg} Golding et al.~2023. eLife
-\end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Naturally you recall that}
-\phantomsection\label{naturally-you-recall-that-2}
-\begin{columns}[T]
-\begin{column}{0.4\textwidth}
-\begin{itemize}
-\tightlist
-\item
-  Transmission potential makes boring times of low or no transmission
-  more fun
+  Transmission potential is a \st{fun} useful metric for \st{boring}
+  periods of low or no transmission
 \item
   TP is informed by behavioural data
 
@@ -277,7 +267,8 @@ Golding et al.~2023. eLife
 \end{column}
 
 \begin{column}{0.7\textwidth}
-\includegraphics{images/tp_model_schema.jpg} Golding et al.~2023. eLife
+\includegraphics{images/tp_model_schema_drawn_on.jpg} Golding et
+al.~2023. eLife
 \end{column}
 \end{columns}
 \end{frame}
@@ -440,12 +431,56 @@ settings:\newline
 \item
   residential\newline
 \end{itemize}
-
-Fed into macrodistancing and microdistancing measures 2020-2023
 \end{column}
 
 \begin{column}{0.4\textwidth}
-\includegraphics{images/lax_78089_elife-78089-fig3-v2.tif.jpg}
+\includegraphics{images/tp_model_schema_drawn_on.jpg} Fed into TP via
+macrodistancing and household transmission probability 2020-2023
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Upwardly mobile}
+\phantomsection\label{upwardly-mobile}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/mobility/single/VIC_mobility_residential.png}
+\end{frame}
+
+\begin{frame}{Upwardly mobile}
+\phantomsection\label{upwardly-mobile-1}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/mobility/state/VIC_mobility_all.png}
+\end{frame}
+
+\begin{frame}{Upwardly mobile}
+\phantomsection\label{upwardly-mobile-2}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/mobility/state/NSW_mobility_all.png}
+\end{frame}
+
+\begin{frame}{Upwardly mobile}
+\phantomsection\label{upwardly-mobile-3}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/mobility/state/NT_mobility_all.png}
+\end{frame}
+
+\section{National behavioural survey}\label{national-behavioural-survey}
+
+\begin{frame}{The surveys}
+\phantomsection\label{the-surveys}
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+\tightlist
+\item
+  Questionnaire panel by Painted Dog on behalf of DoHAC
+\item
+  March 2020 -- December 2023
+\item
+  177 survey rounds
+\item
+  378,428 samples
+\end{itemize}
+\end{column}
+
+\begin{column}{0.6\textwidth}
+\includegraphics{images/survey_numbers.png}
 \end{column}
 \end{columns}
 \end{frame}
@@ -464,7 +499,15 @@ Fed into macrodistancing and microdistancing measures 2020-2023
 \end{column}
 
 \begin{column}{0.48\textwidth}
-\includegraphics{images/tp_model_schema.jpg}
+\begin{figure}[H]
+
+{\centering \includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/mobility/state/VIC_mobility_all.png}
+
+}
+
+\caption{s}
+
+\end{figure}%
 \end{column}
 \end{columns}
 \end{frame}
