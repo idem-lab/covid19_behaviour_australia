@@ -170,7 +170,7 @@
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={How did Australians behave during the COVID-19 pandemic?},
-  pdfauthor={Gerry Ryan; Nick Golding; August Hao; Katharine Senior; Oliver Eales; Mingmei Teo; David Price; James McCaw; Freya Shearer},
+  pdfauthor={Gerry Ryan; Nick Golding; August Hao; Katharine Senior; Oliver Eales; Mingmei Teo; Sandra Carlson; Craig Dalton; Peter Dawson; David Price; James McCaw; Freya Shearer},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
@@ -179,8 +179,9 @@
 \subtitle{A look into mobility and systematic questionnaire data from
 2020-2023}
 \author{Gerry Ryan \and Nick Golding \and August Hao \and Katharine
-Senior \and Oliver Eales \and Mingmei Teo \and David Price \and James
-McCaw \and Freya Shearer}
+Senior \and Oliver Eales \and Mingmei Teo \and Sandra Carlson \and Craig
+Dalton \and Peter Dawson \and David Price \and James McCaw \and Freya
+Shearer}
 \date{}
 
 \begin{document}
@@ -485,10 +486,137 @@ macrodistancing and household transmission probability 2020-2023
 \end{columns}
 \end{frame}
 
+\begin{frame}{The Questions}
+\phantomsection\label{the-questions}
+\begin{columns}[T]
+\begin{column}{0.6\textwidth}
+\begin{itemize}
+\tightlist
+\item
+  Are you staying 1.5m away from people outside of your household?
+\item
+  In the last week, have you had physical contact with a person who
+  doesn't live with you?
+\item
+  Thinking about the last time you were in a public place, did you wash
+  your hands or use hand sanitiser immediately afterwards?
+\item
+  Thinking about the last time you coughed or sneezed, did you cover
+  your mouth with \ldots{} \emph{something}/nothing?
+\item
+  Do you wear a face covering whenever you leave your home?
+\end{itemize}
+\end{column}
+
+\begin{column}{0.4\textwidth}
+\includegraphics{images/questionnaire_example.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/microdistancing_effect_no_data_vis_wide.png}
+\end{frame}
+
+\begin{frame}{Other hygiene behaviours}
+\phantomsection\label{other-hygiene-behaviours}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/hygiene/hygiene_all_by_state_wide.png}
+\end{frame}
+
+\begin{frame}{Other hygiene behaviours}
+\phantomsection\label{other-hygiene-behaviours-1}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/hygiene/hygiene_all_by_question_wide.png}
+\end{frame}
+
+\begin{frame}{Do interventions change behaviour?}
+\phantomsection\label{do-interventions-change-behaviour}
+\includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/intervention_model_comparison.png}
+\end{frame}
+
+\begin{frame}{Test-seeking behaviours}
+\phantomsection\label{test-seeking-behaviours}
+\begin{columns}[T]
+\begin{column}{0.7\textwidth}
+\begin{itemize}
+\tightlist
+\item
+  Have you experienced any of the following symptoms during the past 2
+  weeks?
+\item
+  Have you been tested for COVID-19/Coronavirus infection in the past 2
+  weeks?
+\item
+  Did you have a PCR test or a Rapid Antigen Test (RAT)? (multiple
+  response available)
+\item
+  What was the result of your most recent PCR test/RAT?
+\item
+  Did you report your positive rapid antigen test (RAT) result to a
+  state/territory health department?
+\item
+  Why did you get a COVID-19 test? (Symptoms/contact/job)
+\end{itemize}
+\end{column}
+
+\begin{column}{0.3\textwidth}
+\includegraphics{images/testing_queue_the_age_JoeArmao.jpeg} Joe Armao /
+The Age
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Test seeking given symptoms}
+\phantomsection\label{test-seeking-given-symptoms}
+\includegraphics{images/eales_F1.large.jpg}
+
+Core symptom = cough, fever, any change in taste or smell, sore throat
+
+Eales et al.~(2024) medRXiv
+\end{frame}
+
+\begin{frame}{Test seeking across the states}
+\phantomsection\label{test-seeking-across-the-states}
+\includegraphics{images/eales_F2.large.jpg}
+\end{frame}
+
+\begin{frame}{RATS, PCRs, and Reporting}
+\phantomsection\label{rats-pcrs-and-reporting}
+\includegraphics{images/eales_F4.large.jpg}
+\end{frame}
+
+\begin{frame}{Testtracking}
+\phantomsection\label{testtracking}
+\includegraphics{images/eales_F5.large.jpg}
+\end{frame}
+
+\begin{frame}{The Opinion Page}
+\phantomsection\label{the-opinion-page}
+\begin{itemize}
+\tightlist
+\item
+  These data were all very useful!
+\item
+  Mobility data can't be relied on from BigTech but are there local
+  sources that could be prepared to be stood up in future?
+\item
+  Questionnaire data had problems with relibility (bots/obviously wrong
+  responses) --- but the still showed a helpful (believeable) trend ---
+  can we delve deeper into this? With social researchers?
+\item
+  Are independent surveys worth the extra cost above self-selecting
+  ones? (E.g. vis a vis FluTracking v National Survey?)
+\item
+  Interventions change behaviour!
+\end{itemize}
+
+Eales et al.~(2024) medRXiv. \emph{Temporal trends in test-seeking
+behaviour during the COVID-19 pandemic}
+\end{frame}
+
 \begin{frame}{two col template}
 \phantomsection\label{two-col-template}
 \begin{columns}[T]
-\begin{column}{0.48\textwidth}
+\begin{column}{0.6\textwidth}
 \begin{itemize}
 \tightlist
 \item
@@ -498,7 +626,7 @@ macrodistancing and household transmission probability 2020-2023
 \end{itemize}
 \end{column}
 
-\begin{column}{0.48\textwidth}
+\begin{column}{0.4\textwidth}
 \begin{figure}[H]
 
 {\centering \includegraphics{~/Documents/tki_work/covid_modelling/covid19_behaviour_australia/outputs/figures/mobility/state/VIC_mobility_all.png}
